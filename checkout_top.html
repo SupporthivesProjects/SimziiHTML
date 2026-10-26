@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simzii</title>
+
+    <link rel="icon" type="image/svg+xml" href="./img/tg-icon.svg">
+    <link rel="stylesheet" href="./devcss/mainBase.css">
+    <script src="js/motion.js"></script>
+</head>
+
+<body>
+
+    <div class="main-div">
+        <header class="site-header" id="site-header">
+            <div class="site-header__bar">
+                <a class="logo" href="index.html" aria-label="Simzii home">SIMZII</a>
+                <nav class="site-nav" aria-label="Main">
+                    <a class="site-nav__link" href="plans.html">DESTINATIONS</a>
+                    <a class="site-nav__link" href="plans.html?type=regional#all">REGIONS</a>
+                    <a class="site-nav__link" href="index.html#how">HOW IT WORKS</a>
+                    <a class="site-nav__link" href="help.html">SUPPORT</a>
+                    <div class="currency" data-currency="">
+                        <button class="currency__toggle" type="button" aria-haspopup="listbox" aria-expanded="false">$
+                            USD</button>
+                        <div class="currency__list" role="listbox" aria-label="Currency">
+                            <button class="currency__option" type="button" role="option" data-set-currency="USD"
+                                aria-selected="true">$ USD</button>
+                            <button class="currency__option" type="button" role="option" data-set-currency="EUR"
+                                aria-selected="false">€ EUR</button>
+                            <button class="currency__option" type="button" role="option" data-set-currency="GBP"
+                                aria-selected="false">£ GBP</button>
+                        </div>
+                    </div>
+                    <a class="btn btn--gold btn--small" href="login.html">MY ACCOUNT</a>
+                </nav>
+                <div class="site-header__actions">
+                    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu"
+                        aria-label="Open menu">
+                        <img src="assets/icons/menu.svg" alt="" data-motion-img="1">
+                    </button>
+                </div>
+            </div>
+            <div class="mobile-menu" id="mobile-menu">
+                <nav class="mobile-menu__links" aria-label="Main">
+                    <a class="mobile-menu__link" href="plans.html">Destinations <img
+                            src="assets/icons/arrow-right-gold.svg" alt="" data-motion-img="1">
+                    </a>
+                    <a class="mobile-menu__link" href="plans.html?type=regional#all">Regions <img
+                            src="assets/icons/arrow-right-gold.svg" alt="" data-motion-img="1">
+                    </a>
+                    <a class="mobile-menu__link" href="index.html#how">How it works <img
+                            src="assets/icons/arrow-right-gold.svg" alt="" data-motion-img="1">
+                    </a>
+                    <a class="mobile-menu__link" href="help.html">Support <img src="assets/icons/arrow-right-gold.svg"
+                            alt="" data-motion-img="1">
+                    </a>
+                </nav>
+                <div class="mobile-menu__utilities">
+                    <p class="label text-mist">CURRENCY</p>
+                    <div class="mobile-menu__currencies">
+                        <button class="mobile-menu__currency" type="button" data-set-currency="USD"
+                            aria-pressed="true">$ USD</button>
+                        <button class="mobile-menu__currency" type="button" data-set-currency="EUR"
+                            aria-pressed="false">€ EUR</button>
+                        <button class="mobile-menu__currency" type="button" data-set-currency="GBP"
+                            aria-pressed="false">£ GBP</button>
+                    </div>
+                </div>
+                <a class="btn btn--gold btn--block" href="login.html">MY ACCOUNT</a>
+                <div class="socials mobile-menu__socials">
+                    <a class="socials__link" href="#" data-pending="Social link to be supplied" aria-label="Instagram">
+                        <img src="assets/icons/instagram.svg" alt="" width="14" height="14" data-motion-img="1">
+                    </a>
+                    <a class="socials__link" href="#" data-pending="Social link to be supplied" aria-label="TikTok">
+                        <img src="assets/icons/tiktok.svg" alt="" width="14" height="14" data-motion-img="1">
+                    </a>
+                    <a class="socials__link" href="#" data-pending="Social link to be supplied" aria-label="X">
+                        <img src="assets/icons/x.svg" alt="" width="14" height="14" data-motion-img="1">
+                    </a>
+                </div>
+            </div>
+        </header>
+
+
+
+        <main>
+            <section class="flow-header">
+                <div class="container flow-header__inner">
+                    <div class="flow-header__copy" data-motion-reveal="1">
+                        <p class="eyebrow">CHECKOUT</p>
+                        <h1 class="flow-title">Almost there</h1>
+                    </div>
+                    <ol class="steps" aria-label="Purchase steps">
+                        <li class="steps__step" data-motion-reveal="1"><a
+                                href="cart.html"><span>01</span><span>CART</span></a></li>
+                        <li class="steps__rule" aria-hidden="true" data-motion-reveal="1"></li>
+                        <li class="steps__step" aria-current="step" data-motion-reveal="1">
+                            <span>02</span><span>CHECKOUT</span></li>
+                        <li class="steps__rule" aria-hidden="true" data-motion-reveal="1"></li>
+                        <li class="steps__step" data-motion-reveal="1"><span>03</span><span>PAYMENT</span></li>
+                    </ol>
+                </div>
+            </section>
+
+            <form class="checkout container" id="checkout-form" novalidate="">
+                <div class="checkout__details">
+                    <h2 class="h4">Your details</h2>
+                    <p class="body-sm text-pine">We send the eSIMs and the invoice to this email address.</p>
+                    <div class="hand-off">
+                        <div class="hand-off__head">
+                            <h3 class="h5">John Smith</h3>
+                            
+                        </div>
+                        <p class="body-sm text-pine">john.smith@gmail.com  ·  Adding to your Turkey eSIM. The receipt goes to this email.</p>
+                    </div>
+                    
+                    <div class="hand-off">
+                        <div class="hand-off__head">
+                            <h3 class="h5">Payment</h3>
+                            <div class="pay-marks"><img src="assets/icons/visa.svg" alt="Visa" data-motion-img="1"><img
+                                    src="assets/icons/mastercard.svg" alt="Mastercard" data-motion-img="1"></div>
+                        </div>
+                        <p class="body-sm text-pine">You will pay on our payment provider's secure page. Simzii never
+                            sees or stores your card details.</p>
+                    </div>
+                </div>
+
+                <aside class="summary-box checkout__summary" aria-labelledby="summary-title">
+                    <h2 class="h5" id="summary-title">Order summary</h2>
+                    <div class="checkout__rows" id="summary-lines">
+                        <div class="summary-row"><span class="summary-row__key">Japan, 10GB, 30 days</span><span
+                                class="summary-row__value"><span data-usd="9.4">$9.40</span></span></div>
+                        <div class="summary-row"><span class="summary-row__key">Europe, 5GB, 30 days</span><span
+                                class="summary-row__value"><span data-usd="22">$22.00</span></span></div>
+                        <div class="summary-row"><span class="summary-row__key">Middle East and North Africa, 5GB, 30
+                                days</span><span class="summary-row__value"><span data-usd="57">$57.00</span></span>
+                        </div>
+                    </div>
+                    <div class="discount" id="discount">
+                        <div class="field discount__field">
+                            <label class="field__label" for="discount-code">DISCOUNT CODE</label>
+                            <input class="field__control" id="discount-code" type="text" autocomplete="off"
+                                placeholder="Enter code">
+                        </div>
+                        <button class="discount__btn" type="button" id="discount-apply">APPLY</button>
+                        <p class="field__error discount__error" id="discount-error" hidden="">That code is not valid.
+                        </p>
+                    </div>
+                    <div class="summary-rule"></div>
+                    <div class="checkout__rows" id="summary-totals">
+                        <div class="summary-row"><span class="summary-row__key">Subtotal</span><span
+                                class="summary-row__value"><span data-usd="88.4">$88.40</span></span></div>
+                        <div class="summary-row summary-row--total"><span class="summary-row__key">Total</span><span
+                                class="summary-row__value summary-row__value--large" data-usd="88.4">$88.40</span></div>
+                    </div>
+                    <button class="btn btn--light btn--block btn--flow checkout__submit checkout__submit--desktop"
+                        type="submit">CONTINUE TO SECURE PAYMENT</button>
+                </aside>
+
+                <div class="checkout__consent">
+                    <div class="checkout__check">
+                        <label class="checkbox" id="terms-box"><input type="checkbox" id="terms" name="terms"><span>I
+                                agree to the <a href="legal.html?doc=terms">Terms &amp; Conditions</a> and <a
+                                    href="legal.html?doc=privacy">Privacy Policy</a></span></label>
+                        <p class="field__error" id="terms-error" hidden="">Agree to the Terms &amp; Conditions to
+                            continue.</p>
+                    </div>
+                    <div class="checkout__check">
+                        <div class="recaptcha" id="recaptcha-box">
+                            <label><input type="checkbox" id="recaptcha" name="recaptcha">I'm not a robot</label>
+                            <div class="recaptcha__mark"><span>reCAPTCHA</span><span>Privacy · Terms</span></div>
+                        </div>
+                        <p class="field__error" id="recaptcha-error" hidden="">Tick the box to show you are not a robot.
+                        </p>
+                    </div>
+                </div>
+
+                <button class="btn btn--light btn--block btn--flow checkout__submit checkout__submit--mobile"
+                    type="submit">CONTINUE TO SECURE PAYMENT</button>
+            </form>
+        </main>
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer__columns">
+                    <div class="site-footer__brand">
+                        <a class="logo logo--large" href="index.html">SIMZII</a>
+                        <p>Prepaid travel eSIMs for single countries and whole regions.</p>
+                    </div>
+                    <div class="site-footer__pair">
+                        <div class="site-footer__column">
+                            <p class="site-footer__heading">QUICK LINKS</p>
+                            <div class="site-footer__links">
+                                <a href="plans.html">Destinations</a>
+                                <a href="plans.html?type=regional#all">Regions</a>
+                                <a href="index.html#how">How it works</a>
+                                <a href="about.html">About us</a>
+                            </div>
+                        </div>
+                        <div class="site-footer__column">
+                            <p class="site-footer__heading">SUPPORT</p>
+                            <div class="site-footer__links">
+                                <a href="help.html">Help centre</a>
+                                <a href="compatibility.html">Compatibility</a>
+                                <a href="contact.html">Contact us</a>
+                                <a href="login.html">My account</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="site-footer__column">
+                        <p class="site-footer__heading">CONTACTS</p>
+                        <div class="site-footer__links">
+                            <a href="mailto:info@simzii.com">info@simzii.com</a>
+                            <a href="tel:+78005005640">8 (800) 500-56-40</a>
+                            <a href="legal.html?doc=terms">Terms &amp; Conditions</a>
+                            <a href="legal.html?doc=privacy">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-footer__rule"></div>
+                <div class="site-footer__bottom">
+                    <div class="socials "><a class="socials__link" href="#" data-pending="Social link to be supplied"
+                            aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="" width="14" height="14"
+                                loading="lazy" decoding="async" data-motion-img="1" class=""></a><a
+                            class="socials__link" href="#" data-pending="Social link to be supplied"
+                            aria-label="TikTok"><img src="assets/icons/tiktok.svg" alt="" width="14" height="14"
+                                loading="lazy" decoding="async" data-motion-img="1" class=""></a><a
+                            class="socials__link" href="#" data-pending="Social link to be supplied" aria-label="X"><img
+                                src="assets/icons/x.svg" alt="" width="14" height="14" loading="lazy" decoding="async"
+                                data-motion-img="1" class=""></a></div>
+                    <p class="site-footer__copyright">© 2026 Simzii. All rights reserved.</p>
+                    <div class="pay-marks"><img src="assets/icons/visa.svg" alt="Visa" width="46" height="32"
+                            loading="lazy" decoding="async" data-motion-img="1" class=""><img
+                            src="assets/icons/mastercard.svg" alt="Mastercard" width="46" height="32" loading="lazy"
+                            decoding="async" data-motion-img="1" class=""></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="popup" id="popup-sent" hidden role="dialog" aria-modal="true" aria-labelledby="popup-sent-title">
+        <div class="popup__overlay"></div>
+        <div class="popup__dialog">
+            <button class="popup__close" type="button" data-popup-close="" aria-label="Close"><img
+                    src="assets/icons/close.svg" alt="" data-motion-img="1"></button>
+            <img class="popup__mark" src="assets/icons/mark-check.svg" alt="" data-motion-img="1">
+            <h2 class="popup__title" id="popup-sent-title">Message sent</h2>
+            <p class="popup__body">Thanks for writing. We reply by email, usually within one working day.</p>
+            <a class="btn btn--light" href="index.html">BACK TO HOME</a>
+        </div>
+    </div>
+
+    <script src="uiframe/js/jquery.min.js"></script>
+    <script src="uiframe/js/bootstrap.bundle.min.js"></script>
+    <script src="uiframe/js/popper.min.js"></script>
+    <script src="uiframe/js/slick.js"></script>
+    <script src="uiframe/js/owl.carousel.js"></script>
+    <script src="uiframe/js/swiper-bundle.min.js"></script>
+    <script src="uiframe/js/flickity.pkgd.min.js"></script>
+    <script src="uiframe/js/aos.js"></script>
+    <script src="./uiframe/js/home-js.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/partials.js"></script>
+    <script src="js/pages/help.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".navbar-toggler").click(function () {
+                $(this).toggleClass("is-active");
+                $(".navbar-expand-lg").toggleClass("header-is-active");
+            });
+        });
+    </script>
+    <script>
+        window.addEventListener('scroll', function () {
+            var content = document.querySelector('header');
+            var scrollPosition = window.scrollY;
+            if (scrollPosition > 10) {
+                content.classList.add("header-scroll")
+            } else {
+                content.classList.remove("header-scroll")
+            }
+        });
+    </script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
