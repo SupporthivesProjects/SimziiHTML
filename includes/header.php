@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="./devcss/mainBase.css">
     <script src="js/motion.js"></script>
   </head>
-  <body class="home" data-page="home">
+  <body>
+  <!-- ------------home page---------- -->
+  <!-- <body class="home" data-page="home"> -->
+
   
   <div class="main-div">
     <header class="site-header" id="site-header">
@@ -73,8 +76,10 @@
           </div>
         </div>
     </header>
-    <canvas id="wisps" aria-hidden="true"></canvas>
-    <div class="smooth" id="smooth">
+
+    <!-- ------------home page---------- -->
+    <!-- <canvas id="wisps" aria-hidden="true"></canvas>
+    <div class="smooth" id="smooth"> -->
 
 
   
