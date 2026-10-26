@@ -64,7 +64,9 @@
         <script src="uiframe/js/flickity.pkgd.min.js"></script>   
         <script src="uiframe/js/aos.js"></script>
         <script src="./uiframe/js/home-js.js"></script>
-        <script src="js/ui.js"></script>       
+        <script src="js/ui.js"></script>  
+        <script src="js/vendor-three.min.js"></script>
+        <script src="js/home-data.js"></script>     
         <script src="js/partials.js"></script>
         <script src="js/pages/help.js"></script>
 
