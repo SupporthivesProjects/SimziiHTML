@@ -56,7 +56,7 @@
                 <a class="btn btn--light" href="index.html">BACK TO HOME</a>
             </div>
         </div>
-        
+        <!-- ------------home page---------- -->
         <!-- <div class="panel" id="panel">
             <b>Tuning (H to hide)</b>
             <label>Scroll ease <span id="v-ease"></span>
