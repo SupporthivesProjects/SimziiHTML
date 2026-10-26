@@ -1,0 +1,170 @@
+/* cream card over a dark stage with four photos; on mobile two photos sit above the card */
+
+.auth {
+  /* 1 design px at 1920 wide, never above 1px */
+  --u: min(1px, calc(100vw / 1920));
+  position: relative;
+  overflow: hidden;
+  min-height: 1180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 168px 24px 40px;
+  background: var(--forest-dark);
+}
+
+.auth__photos {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: calc(1920 * var(--u));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.auth__photo {
+  position: absolute;
+  object-fit: cover;
+}
+/* side photos keep their gap from the 600px card as the page narrows */
+.auth__photo--a {
+  left: min(calc(200 * var(--u)), calc(500 * var(--u) - 300px));
+  top: 220px;
+  width: calc(320 * var(--u));
+  height: calc(420 * var(--u));
+}
+.auth__photo--b {
+  left: max(calc(1440 * var(--u)), calc(1140 * var(--u) + 300px));
+  top: 180px;
+  width: calc(280 * var(--u));
+  height: calc(360 * var(--u));
+}
+.auth__photo--c {
+  left: min(calc(280 * var(--u)), calc(580 * var(--u) - 300px));
+  top: 800px;
+  width: calc(300 * var(--u));
+  height: calc(300 * var(--u));
+}
+.auth__photo--d {
+  left: max(calc(1420 * var(--u)), calc(1120 * var(--u) + 300px));
+  top: 760px;
+  width: calc(360 * var(--u));
+  height: calc(300 * var(--u));
+}
+
+.auth__card {
+  position: relative;
+  z-index: 1;
+  width: 600px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 64px;
+  background: var(--cream);
+}
+.auth__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+.auth__title {
+  white-space: nowrap;
+}
+.auth__lead {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--pine);
+}
+
+.auth__link {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  color: var(--deep-gold);
+  text-underline-offset: 3px;
+}
+.auth__link:hover {
+  text-decoration: underline;
+}
+.auth__forgot {
+  align-self: flex-end;
+}
+
+.auth__card .recaptcha__mark span {
+  display: block;
+}
+
+.auth__switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--sand);
+}
+.auth__switch p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--pine);
+}
+
+@media (max-width: 760px) {
+  .auth {
+    display: block;
+    min-height: 0;
+    padding: calc(var(--header-h) + 30px) 24px 56px;
+  }
+  .auth__photos {
+    position: relative;
+    left: auto;
+    width: auto;
+    height: 150px;
+    margin: 0 auto;
+    max-width: 327px;
+    transform: none;
+  }
+  .auth__photo--a {
+    left: 8px;
+    top: 0;
+    width: 130px;
+    height: 170px;
+  }
+  .auth__photo--b {
+    left: auto;
+    right: 8px;
+    top: 40px;
+    width: 110px;
+    height: 130px;
+  }
+  .auth__photo--c,
+  .auth__photo--d {
+    display: none;
+  }
+  .auth__card {
+    width: auto;
+    gap: 24px;
+    padding: 40px 24px;
+  }
+  .auth__head {
+    gap: 10px;
+  }
+  .auth__title {
+    font-size: 30px;
+    white-space: normal;
+  }
+  .auth__forgot {
+    align-self: flex-start;
+  }
+  .auth__switch {
+    flex-direction: column;
+    gap: 8px;
+  }
+  /* popup title stays on one line and may overrun the card */
+  .popup__title {
+    margin-inline: -16px;
+  }
+}

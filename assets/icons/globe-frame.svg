@@ -1,0 +1,6 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon frame">
+<rect x="0.5" y="0.5" width="79" height="79" rx="39.5" stroke="#7C6224"/>
+<path id="icons/globe" d="M40 28C46.627 28 52 33.373 52 40M40 28C33.373 28 28 33.373 28 40M40 28C43 31.3 44.5 35.5 44.5 40C44.5 44.5 43 48.7 40 52M40 28C37 31.3 35.5 35.5 35.5 40C35.5 44.5 37 48.7 40 52M52 40C52 46.627 46.627 52 40 52M52 40H28M40 52C33.373 52 28 46.627 28 40" stroke="#7C6224" stroke-width="1.25"/>
+</g>
+</svg>

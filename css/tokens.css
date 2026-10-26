@@ -1,0 +1,72 @@
+/* design tokens */
+
+@font-face {
+  font-family: "Prata";
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/prata-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/montserrat-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/montserrat-medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/montserrat-semibold.woff2") format("woff2");
+}
+
+:root {
+  /* brand */
+  --forest-dark: #0c1710;
+  --deep-forest: #16251a;
+  --moss-line: #2e3a2f;
+  --pine: #2f4034;
+  --slate-green: #5f6b61;
+  --stone: #7c8a7e;
+  --sage-grey: #9da79b;
+  --mist: #b4bcb2;
+  --sand: #d8cfb8;
+  --oat: #e9e3d4;
+  --cream: #f4f1e8;
+  --cream-light: #f2efe6;
+  --gold: #c2a15a;
+  --gold-40: rgba(194, 161, 90, 0.4);
+  --deep-gold: #7c6224;
+  --deep-gold-50: rgba(124, 98, 36, 0.5);
+  --white: #ffffff;
+  --error-red: #df3f3f;
+  --success-green: #47b147;
+
+  /* type */
+  --font-display: "Prata", Georgia, serif;
+  --font-body: "Montserrat", Arial, sans-serif;
+
+  /* 1440 content at 1920 wide, 24 gutter on mobile */
+  --content: 1440px;
+  --gutter: clamp(24px, 12.5vw, 240px);
+  --section-y: 104px;
+  --header-h: 128px;
+  /* 1 design px at 1920 wide, floored for small laptops */
+  --fs: max(0.62px, min(calc(100vw / 1920), 1.25px));
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --sweep: 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --gutter: 24px;
+    --section-y: 64px;
+    --header-h: 74px;
+  }
+}

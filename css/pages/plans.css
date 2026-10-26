@@ -1,0 +1,454 @@
+.plans-hero {
+  padding-bottom: 104px;
+}
+.plans-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+.plans-hero__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  width: 100%;
+}
+.plans-hero__lead {
+  margin-bottom: 0;
+}
+
+.plans-search {
+  position: relative;
+  width: 720px;
+  max-width: 100%;
+  z-index: 5;
+  text-align: left;
+}
+.plans-search__bar {
+  width: 100%;
+  border: 1.5px solid transparent;
+  transition: border-color 0.3s;
+}
+.plans-search__bar:focus-within,
+.plans-search__bar:has(.search-bar__input:not(:placeholder-shown)) {
+  border-color: var(--gold);
+}
+.plans-search__submit {
+  flex: none;
+}
+
+.plans-suggest {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  background: var(--cream-light);
+  box-shadow: 0 24px 48px -8px rgba(0, 0, 0, 0.16);
+}
+.suggest-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+  padding: 16px 24px;
+  color: var(--deep-forest);
+  transition: background 0.2s;
+}
+.suggest-item--active,
+.suggest-item:hover {
+  background: var(--oat);
+}
+.suggest-item .flag {
+  width: 32px;
+  height: 32px;
+}
+.suggest-item__copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.suggest-item__name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+.suggest-item__name mark {
+  background: none;
+  color: var(--deep-gold);
+}
+.suggest-item__meta {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--pine);
+}
+.suggest-item__price {
+  flex: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  color: var(--deep-gold);
+  white-space: nowrap;
+}
+.suggest-item__arrow {
+  width: 17px;
+  height: 11px;
+  flex: none;
+}
+.plans-suggest__all {
+  display: block;
+  width: 100%;
+  padding: 16px 24px 12px;
+  border-top: 1px solid var(--sand);
+  text-align: left;
+  color: var(--deep-gold);
+}
+.plans-suggest__all:hover {
+  color: var(--deep-forest);
+}
+
+.plans-map {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1440 / 620;
+}
+.plans-map__img {
+  width: 100%;
+  height: 100%;
+}
+.map-pin {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translate(-9px, -50%);
+  color: var(--cream-light);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+}
+.map-pin__marker {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  background: url("../../assets/icons/map-pin.svg") center / 18px 18px no-repeat;
+  transition: transform 0.3s var(--ease);
+}
+/* labels nudged off their neighbours, markers stay put */
+.map-pin--left {
+  flex-direction: row-reverse;
+  transform: translate(calc(-100% + 9px), -50%);
+}
+.map-pin--above .map-pin__label {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 4px);
+  transform: translateX(-50%);
+}
+.map-pin:hover {
+  color: var(--gold);
+}
+.map-pin:hover .map-pin__marker {
+  transform: scale(1.25);
+}
+
+.plans-list__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+.plans-list__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+.plans-list__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.plans-filters {
+  display: flex;
+  gap: 12px;
+  flex: none;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+}
+.plans-grid:empty {
+  display: none;
+}
+.plans-grid .country-card {
+  min-width: 0;
+}
+.plans-grid .country-card__copy {
+  flex: 1;
+}
+/* a long COVERS label drops under the flag on one line rather than wrapping beside it */
+.plans-grid .country-card__top {
+  flex-wrap: wrap;
+  row-gap: 16px;
+  column-gap: 8px;
+}
+.country-card__type {
+  text-align: right;
+  white-space: nowrap;
+}
+.country-card__type--wrap {
+  white-space: normal;
+  text-align: left;
+}
+/* results carry COVERS labels: three across until cards are wide enough for four */
+@media (min-width: 1181px) and (max-width: 1899px) {
+  .plans-grid--results {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.country-card__name {
+  overflow-wrap: anywhere;
+}
+.plans-none {
+  font-size: 15px;
+  color: var(--pine);
+}
+
+.plans-note {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--sand);
+}
+.plans-note__body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--pine);
+}
+.plans-note__clear {
+  flex: none;
+  color: var(--deep-gold);
+}
+.plans-note__clear:hover {
+  color: var(--deep-forest);
+}
+
+.plans-pagination:empty {
+  display: none;
+}
+.pagination__page {
+  cursor: pointer;
+}
+.pagination__gap {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--sand);
+  font-size: 13px;
+  color: var(--pine);
+}
+
+.plans-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+  text-align: center;
+}
+.plans-empty__icon {
+  width: 80px;
+  height: 80px;
+}
+.plans-empty__body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--pine);
+  max-width: 800px;
+}
+.plans-popular {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 24px;
+}
+
+.plans-regional__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+.plans-regional__statement {
+  max-width: 1100px;
+  color: var(--cream-light);
+}
+
+@media (max-width: 1180px) {
+  .plans-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .plans-list__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 960px) {
+  .plans-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .plans-hero {
+    padding-bottom: 40px;
+  }
+  .plans-hero__inner {
+    gap: 20px;
+  }
+  .plans-hero__copy {
+    align-items: flex-start;
+    text-align: left;
+    gap: 20px;
+  }
+  .plans-hero__title {
+    font-size: 38px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+  }
+  .plans-search__bar {
+    gap: 12px;
+    padding: 14px 16px;
+  }
+  .plans-search__bar .search-bar__icon {
+    width: 17px;
+    height: 17px;
+  }
+  .plans-search__submit {
+    display: none;
+  }
+  .plans-suggest {
+    top: calc(100% + 6px);
+    padding: 4px 0;
+    box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.16);
+  }
+  .suggest-item {
+    gap: 12px;
+    padding: 14px 16px;
+  }
+  .suggest-item .flag {
+    width: 28px;
+    height: 28px;
+  }
+  .suggest-item__copy {
+    gap: 2px;
+  }
+  .suggest-item__count,
+  .suggest-item__arrow {
+    display: none;
+  }
+  .plans-suggest__all {
+    padding: 14px 16px 12px;
+  }
+
+  .map-pin {
+    transform: translate(-3px, -50%);
+  }
+  .map-pin--desktop,
+  .map-pin__label {
+    display: none;
+  }
+  .map-pin__marker {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .plans-list {
+    padding-top: 48px;
+  }
+  .plans-list__inner {
+    gap: 24px;
+  }
+  .plans-list__head {
+    gap: 24px;
+  }
+  .plans-list__title {
+    font-size: 30px;
+  }
+  .plans-filters {
+    gap: 8px;
+    max-width: calc(100% + var(--gutter));
+    margin-right: calc(-1 * var(--gutter));
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-right: var(--gutter);
+  }
+  .plans-filters::-webkit-scrollbar {
+    display: none;
+  }
+  .plans-filters .chip {
+    flex: none;
+  }
+  .plans-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .plans-grid--popular > :nth-child(n + 4) {
+    display: none;
+  }
+  .plans-note {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .plans-empty {
+    gap: 16px;
+    padding: 0 0 16px;
+  }
+  .plans-empty__icon {
+    width: 64px;
+    height: 64px;
+  }
+  .plans-empty__title {
+    font-size: 30px;
+  }
+  .plans-empty__body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .plans-popular {
+    padding-top: 0;
+  }
+
+  .plans-regional {
+    padding-block: 56px;
+  }
+  .plans-regional__inner {
+    gap: 24px;
+  }
+  .plans-regional__btn {
+    width: 100%;
+  }
+}

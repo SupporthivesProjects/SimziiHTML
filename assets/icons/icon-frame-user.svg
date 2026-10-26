@@ -1,0 +1,6 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon frame">
+<rect x="0.5" y="0.5" width="63" height="63" stroke="#C2A15A"/>
+<path id="icons/user" d="M20 44C20 37.3726 25.3726 34 32 34C38.6274 34 44 37.3726 44 44M32 20C35.3137 20 38 22.6863 38 26C38 29.3137 35.3137 32 32 32C28.6863 32 26 29.3137 26 26C26 22.6863 28.6863 20 32 20Z" stroke="#C2A15A" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

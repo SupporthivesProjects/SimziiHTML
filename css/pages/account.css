@@ -1,0 +1,1021 @@
+/* my esims, esim detail, order history */
+
+.account__band {
+  height: calc(var(--header-h) + 24px);
+  background: var(--forest-dark);
+}
+
+.account-layout {
+  display: flex;
+  align-items: stretch;
+}
+.account-layout__content {
+  flex: 1;
+  min-width: 0;
+  min-height: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 80px var(--gutter) 120px clamp(40px, 5vw, 96px);
+}
+
+/* sidebar */
+.account-nav {
+  width: 320px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 48px 40px;
+  background: var(--deep-forest);
+  color: var(--cream-light);
+}
+.account-nav__user {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.account-nav__eyebrow {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+}
+.account-nav__name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+.account-nav__email {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--mist);
+  overflow-wrap: anywhere;
+}
+.account-nav__rule {
+  height: 1px;
+  background: var(--moss-line);
+}
+.account-nav__links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.account-nav__link,
+.account-nav__logout {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  color: var(--mist);
+  transition: color 0.3s;
+}
+.account-nav__link {
+  padding: 14px 0;
+}
+.account-nav__link::before {
+  content: "";
+  width: 2px;
+  height: 20px;
+  background: transparent;
+  transition: background 0.3s;
+}
+.account-nav__link[aria-current="page"],
+.account-nav__link:hover,
+.account-nav__logout:hover {
+  color: var(--gold);
+}
+.account-nav__link[aria-current="page"]::before {
+  background: var(--gold);
+}
+.account-nav__logout {
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* user strip and tabs, mobile only */
+.account-strip,
+.account-tabs {
+  display: none;
+}
+
+.account-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+.account-head__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.account-head__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 46px;
+  line-height: 1.2;
+}
+.account-head__link {
+  display: none;
+}
+
+.esim-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+}
+.esim-status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--gold);
+}
+.esim-status--active::before {
+  background: var(--success-green);
+}
+.esim-status--expired::before {
+  background: var(--stone);
+}
+
+/* esim card */
+.esim-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.esim-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 32px 40px;
+  background: var(--cream-light);
+  border: 1px solid var(--sand);
+}
+.esim-card__identity {
+  width: 320px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.esim-card__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.esim-card__name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.25;
+}
+.esim-card__plan {
+  white-space: nowrap;
+}
+.esim-card__plan,
+.esim-card__note {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--pine);
+}
+.esim-card__usage {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.esim-card__bar {
+  height: 4px;
+  background: var(--sand);
+  overflow: hidden;
+}
+.esim-card__bar span {
+  display: block;
+  height: 100%;
+  background: var(--deep-gold);
+}
+.esim-card--expired .esim-card__bar span {
+  background: var(--stone);
+}
+.esim-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: none;
+}
+.esim-card__details {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  color: var(--deep-gold);
+  transition: color 0.3s;
+}
+.esim-card__details:hover {
+  color: var(--deep-forest);
+}
+
+.account-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 96px 24px;
+  border: 1px solid var(--sand);
+  text-align: center;
+}
+.account-empty__icon {
+  width: 80px;
+  height: 80px;
+}
+.account-empty__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 1.2;
+}
+.account-empty__body {
+  max-width: 480px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--pine);
+}
+
+/* esim detail head */
+.esim-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.esim-install__eyebrow,
+.esim-usage__eyebrow,
+.esim-topup__eyebrow {
+  text-transform: none;
+}
+.esim-head__crumb {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  color: var(--slate-green);
+}
+.esim-head__crumb a {
+  transition: color 0.3s;
+}
+.esim-head__crumb a:hover {
+  color: var(--deep-gold);
+}
+.esim-head__title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.esim-head__name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 46px;
+  line-height: 1.2;
+}
+.esim-head__plan {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--pine);
+}
+
+[data-esim-detail] {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.esim-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(320px, 1fr);
+  grid-template-areas: "install usage";
+  column-gap: 48px;
+  align-items: start;
+}
+.esim-columns--topup {
+  grid-template-areas: "install usage" "install topup";
+  grid-template-rows: auto 1fr;
+}
+.esim-columns--expired {
+  grid-template-areas: "usage .";
+}
+
+.esim-install {
+  grid-area: install;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 40px;
+  background: var(--cream-light);
+  border: 1px solid var(--sand);
+  scroll-margin-top: 24px;
+}
+.esim-install__qr-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 40px;
+  align-items: flex-start;
+}
+.esim-install__qr {
+  width: 234px;
+  height: 234px;
+  flex: none;
+}
+.esim-install__steps {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+.esim-install__step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--pine);
+}
+.esim-install__numeral {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: var(--deep-gold);
+  flex: none;
+}
+
+.esim-phone {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 56px;
+  padding: 28px 32px;
+  background: var(--deep-forest);
+}
+.esim-phone__copy {
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.esim-phone__eyebrow {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+.esim-phone__title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--cream);
+}
+.esim-phone__body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--mist);
+}
+.esim-phone__btn {
+  margin-left: auto;
+}
+.esim-phone__mobile {
+  display: none;
+}
+
+.esim-manual__label {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  color: var(--deep-forest);
+}
+.esim-manual__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--sand);
+  font-size: 14px;
+}
+.esim-manual__row dt {
+  line-height: 1.6;
+  color: var(--pine);
+}
+.esim-manual__row dd {
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  color: var(--deep-forest);
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+/* data panel */
+.esim-usage,
+.esim-topup {
+  background: var(--deep-forest);
+  color: var(--cream-light);
+}
+.esim-usage {
+  grid-area: usage;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px;
+}
+.esim-usage--joined {
+  padding-bottom: 0;
+}
+.esim-usage__figure {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 12px;
+  white-space: nowrap;
+}
+.esim-usage__value {
+  font-family: var(--font-display);
+  font-size: 64px;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+.esim-usage__of {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--mist);
+}
+.esim-usage__bar {
+  height: 4px;
+  background: var(--moss-line);
+  overflow: hidden;
+}
+.esim-usage__bar span {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+}
+.esim-usage__bar--expired span {
+  background: var(--stone);
+}
+.esim-usage__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.esim-usage__row,
+.esim-topup__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--moss-line);
+  line-height: 1.4;
+}
+.esim-usage__row dt,
+.esim-topup__row span:first-child {
+  white-space: nowrap;
+}
+.esim-usage__row dd {
+  text-align: right;
+}
+.esim-usage__row dt,
+.esim-topup__row span:first-child {
+  font-size: 13px;
+  color: var(--mist);
+}
+.esim-usage__row dd,
+.esim-topup__row span:last-child {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.esim-topup {
+  grid-area: topup;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 40px 40px;
+}
+.esim-topup__history {
+  display: flex;
+  flex-direction: column;
+}
+.esim-topup__added {
+  padding: 4px 0 12px;
+  gap: 10px;
+  color: var(--cream-light);
+}
+.esim-topup__row {
+  padding: 12px 0;
+}
+.esim-topup__options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.esim-topup__option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border: 1px solid var(--moss-line);
+  font-weight: 500;
+  transition: border-color 0.3s;
+}
+.esim-topup__option:hover,
+.esim-topup__option--selected {
+  border-color: var(--gold);
+}
+.esim-topup__data {
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+}
+.esim-topup__price {
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+/* order history */
+.orders__head,
+.orders__row {
+  display: grid;
+  align-items: center;
+  column-gap: 24px;
+  grid-template-columns: minmax(84px, 160px) minmax(90px, 180px) minmax(
+      150px,
+      1fr
+    ) minmax(64px, 140px) minmax(40px, 120px) minmax(110px, 170px);
+}
+.orders__head {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--deep-forest);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+}
+.orders__row {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--sand);
+  font-size: 14px;
+}
+.orders__ref,
+.orders__total {
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+.orders__date,
+.orders__items {
+  line-height: 1.6;
+}
+.orders__status {
+  line-height: 1.6;
+  color: var(--pine);
+}
+.orders__invoice {
+  text-align: right;
+}
+.orders__download {
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  color: var(--deep-gold);
+  transition: color 0.3s;
+}
+.orders__download:hover {
+  color: var(--deep-forest);
+}
+.orders__meta,
+.orders__mobile {
+  display: none;
+}
+.orders__note {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--pine);
+}
+
+/* laptop */
+@media (max-width: 1600px) {
+  .esim-card {
+    gap: 32px;
+    padding-inline: 32px;
+  }
+  .esim-card__identity {
+    width: auto;
+  }
+  .esim-card__btn {
+    padding-inline: 32px;
+  }
+  .esim-install__qr-row {
+    gap: 24px 32px;
+  }
+  .esim-install__qr {
+    width: 180px;
+    height: 180px;
+  }
+  .esim-install__steps {
+    flex-basis: 200px;
+  }
+}
+
+/* slimmer sidebar and margin so at 1440 the steps stay beside the QR code and INSTALL NOW beside the copy */
+@media (min-width: 1181px) and (max-width: 1600px) {
+  .account-nav {
+    width: 280px;
+    padding-inline: 32px;
+  }
+  .account-layout__content {
+    padding-right: clamp(40px, 4vw, 64px);
+  }
+  .esim-columns {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    column-gap: 32px;
+  }
+  .esim-install {
+    padding: 32px;
+  }
+  .esim-install__qr-row {
+    column-gap: 24px;
+  }
+  .esim-install__qr {
+    width: 160px;
+    height: 160px;
+  }
+  .esim-phone {
+    gap: 24px 40px;
+  }
+  /* 300px panel: keeps "5.1GB of 9GB" on one line */
+  .esim-usage {
+    padding-inline: 32px;
+  }
+  .esim-topup {
+    padding-inline: 32px;
+  }
+  .esim-usage__value {
+    font-size: 52px;
+  }
+}
+
+/* tablet: sidebar becomes the strip and tabs, cards and columns stack */
+@media (max-width: 1180px) {
+  .account-layout {
+    flex-direction: column;
+  }
+  .account-nav {
+    display: none;
+  }
+  .account-strip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px var(--gutter);
+    background: var(--deep-forest);
+    color: var(--cream-light);
+  }
+  .account-strip__avatar {
+    width: 32px;
+    height: 32px;
+    flex: none;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background: var(--gold);
+    color: var(--forest-dark);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-indent: 0.16em;
+  }
+  .account-strip__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .account-strip__name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+  .account-strip__email {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--mist);
+    overflow-wrap: anywhere;
+  }
+  .account-layout__content {
+    min-height: 0;
+    gap: 40px;
+    padding: 32px var(--gutter) 96px;
+  }
+  .account-tabs {
+    display: flex;
+  }
+  .account-tabs__tab {
+    flex: 1;
+    padding: 16px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--sand);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.16em;
+    color: var(--pine);
+    white-space: nowrap;
+  }
+  .account-tabs__tab[aria-current="page"] {
+    border-bottom: 2px solid var(--deep-gold);
+    color: var(--deep-gold);
+  }
+  .esim-card {
+    flex-wrap: wrap;
+    gap: 24px 40px;
+  }
+  .esim-card__identity {
+    width: 100%;
+  }
+  .esim-columns,
+  .esim-columns--topup,
+  .esim-columns--expired {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "usage" "install" "topup";
+    grid-template-rows: none;
+    row-gap: 28px;
+  }
+  .esim-usage--joined {
+    padding-bottom: 40px;
+  }
+  .esim-topup {
+    padding-top: 40px;
+  }
+  .esim-topup__eyebrow--options {
+    order: -1;
+  }
+  .esim-topup__eyebrow--history {
+    display: none;
+  }
+  .account__band {
+    height: 74px;
+  }
+  .orders__head {
+    display: none;
+  }
+  .orders__row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "ref total" "meta meta" "items items" "invoice invoice";
+    row-gap: 10px;
+    padding: 20px 0;
+  }
+  .orders__ref {
+    grid-area: ref;
+  }
+  .orders__total {
+    grid-area: total;
+  }
+  .orders__date,
+  .orders__status {
+    display: none;
+  }
+  .orders__meta {
+    display: block;
+    grid-area: meta;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--pine);
+  }
+  .orders__items {
+    grid-area: items;
+  }
+  .orders__invoice {
+    grid-area: invoice;
+    text-align: left;
+  }
+}
+
+/* mobile */
+@media (max-width: 760px) {
+  .account__band {
+    height: var(--header-h);
+  }
+  .account-layout__content {
+    gap: 28px;
+    padding: 24px var(--gutter) 56px;
+  }
+
+  .account-head {
+    align-items: center;
+  }
+  .account-head__eyebrow,
+  .account-head__action {
+    display: none;
+  }
+  .account-head__title {
+    font-size: 30px;
+  }
+  .account-head__link {
+    display: block;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.16em;
+    color: var(--deep-gold);
+    white-space: nowrap;
+  }
+  .account-head__link[hidden] {
+    display: none;
+  }
+
+  .esim-list {
+    gap: 28px;
+  }
+  .esim-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 24px;
+  }
+  .esim-card__identity {
+    gap: 16px;
+  }
+  .esim-card__flag {
+    width: 40px;
+    height: 40px;
+  }
+  .esim-card__copy {
+    gap: 4px;
+  }
+  .esim-card__usage {
+    display: contents;
+  }
+  .esim-card__actions {
+    gap: 20px;
+  }
+  .esim-card__btn {
+    flex: 1;
+    padding-inline: 16px;
+  }
+
+  .account-empty {
+    gap: 20px;
+    padding: 56px 24px;
+  }
+  .account-empty__icon {
+    width: 72px;
+    height: 72px;
+  }
+  .account-empty__title {
+    font-size: 28px;
+  }
+  .account-empty__cta {
+    width: 100%;
+  }
+
+  [data-esim-detail] {
+    gap: 28px;
+  }
+  .esim-head {
+    gap: 28px;
+  }
+  .esim-head__title {
+    gap: 16px;
+  }
+  .esim-head__name {
+    font-size: 30px;
+  }
+
+  .esim-usage {
+    gap: 16px;
+    padding: 32px 24px;
+  }
+  .esim-usage--joined {
+    padding-bottom: 32px;
+  }
+  .esim-usage__figure {
+    gap: 10px;
+  }
+  .esim-usage__value {
+    font-size: 34px;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+  }
+  .esim-usage__rows {
+    gap: 16px;
+  }
+  .esim-usage__row {
+    padding: 12px 0;
+  }
+
+  .esim-install {
+    align-items: center;
+    gap: 24px;
+    padding: 32px 24px;
+  }
+  .esim-install__eyebrow {
+    text-align: center;
+  }
+  .esim-phone {
+    order: -1;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 24px;
+    width: 100%;
+  }
+  .esim-install__eyebrow {
+    order: -2;
+  }
+  .esim-phone__copy {
+    flex: none;
+    max-width: none;
+  }
+  .esim-phone__btn {
+    margin: 0;
+    padding-inline: 16px;
+  }
+  .esim-phone__desktop {
+    display: none;
+  }
+  .esim-phone__mobile {
+    display: inline;
+  }
+  .esim-install__qr-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+  .esim-install__qr {
+    width: 234px;
+    height: 234px;
+  }
+  .esim-install__steps {
+    flex: none;
+    width: 100%;
+    gap: 16px;
+  }
+  .esim-install__step {
+    gap: 12px;
+  }
+  .esim-manual {
+    width: 100%;
+  }
+  .esim-manual__row {
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 0;
+  }
+  .esim-manual__row dt {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .esim-manual__row dd {
+    text-align: left;
+  }
+
+  .esim-topup {
+    gap: 12px;
+    padding: 32px 24px;
+  }
+  .esim-topup__history {
+    margin-bottom: 0;
+  }
+
+  .orders__desktop {
+    display: none;
+  }
+  .orders__mobile {
+    display: inline;
+  }
+}
