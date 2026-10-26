@@ -186,5 +186,5 @@
     if (['simzii.cart', 'simzii.session', 'simzii.currency'].includes(e.detail.key)) render();
   });
 
-  render();
+  //render();
 })();
