@@ -63,7 +63,7 @@ ol {
 
 .container {
   width: 100%;
-  max-width: calc(var(--content) + 2 * var(--gutter));
+  max-width: calc(var(--content) + 2 * var(--gutter)) !important;
   margin: 0 auto;
   padding-inline: var(--gutter);
 }
