@@ -1,9 +1,4 @@
-/*
-  Store: the one place pages read products and prices from.
-  It reads window.SIMZII_CATALOGUE (data/catalogue.js). To move to an API, replace
-  load() with a fetch and keep the lookups below; every page goes through them.
-  Cart, session, currency and the last order live in localStorage.
-*/
+
 (function () {
   'use strict';
 
