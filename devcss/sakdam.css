@@ -1,0 +1,11 @@
+.about_main .reveal {
+    opacity: 1;
+}
+
+.about_main .about-hero__notes {
+    padding-left: 0%;
+}
+
+.about_main .about-hero__scroll {
+    left: calc(var(--gutter) - 90px);
+}
