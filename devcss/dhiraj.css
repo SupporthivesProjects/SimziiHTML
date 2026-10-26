@@ -1,0 +1,27 @@
+.esim-topup__cta{
+    color: var(--brand-forest-dark, #0C1710) !important;
+font-family: "Montserrat";
+font-size: 13px;
+font-style: normal;
+font-weight: 600;
+line-height: 140%; /* 18.2px */
+letter-spacing: 2.6px;
+}
+
+.esim-phone__btn,.esim-topup__cta {
+        border-radius: 0px !important;
+}
+
+.esim-card__btn ,.account-head__action,.account-empty__cta{
+    border: 1px solid var(--brand-deep-gold, #7C6224) !important;
+    border-radius: 0px !important;
+    color: var(--brand-deep-gold, #7C6224) !important;
+
+}
+
+.esim-card__btn:hover ,.account-head__action:hover,.account-empty__cta:hover{
+border: 1px solid var(--brand-deep-gold, #7C6224) !important;
+background: var(--brand-deep-gold, #7C6224) !important;
+color: var(--brand-cream, #F4F1E8) !important;
+
+}
