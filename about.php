@@ -1,11 +1,12 @@
 <?php include 'includes/header.php'; ?>
-<main>
+
+<main class="about_main">
   <section class="about-hero">
     <div class="container about-hero__grid">
       <div class="about-hero__media" data-motion-reveal="1">
         <img class="about-hero__img" fetchpriority="high" src="assets/images/pages/about-train.jpg" alt="A traveller looking out of a train window at the passing countryside" width="2200" height="1467" data-motion-img="1">
         <div class="about-hero__copy">
-          <p class="eyebrow">ABOUT SIMZII</p>
+          <p class="eyebrow about_simzi">ABOUT SIMZII</p>
           <h1 class="about-hero__title">Mobile data for the <br class="about-hero__break">way you travel</h1>
         </div>
       </div>
@@ -30,7 +31,7 @@
     </div>
   </section>
 
-  <section class="about-story">
+  <section class="about-story about_story_out">
     <div class="container about-story__grid">
       <div class="about-story__copy" data-motion-reveal="1" style="">
         <p class="eyebrow eyebrow--deep">OUR STORY</p>
@@ -42,7 +43,7 @@
           <p>When the trip changes, the account keeps up. Top up from your phone, add another destination, or download an invoice for the expense report.</p>
         </div>
       </div>
-      <figure class="about-story__figure" data-motion-reveal="1" style="">
+      <figure class="about-story__figure about_story_frame_" data-motion-reveal="1" style="">
         <div class="about-story__frame">
           <img src="assets/images/pages/about-story-window.jpg" alt="An aircraft on the apron seen through a plane window at sunset" width="2200" height="3300" loading="lazy" decoding="async" data-motion-img="1">
         </div>
@@ -61,10 +62,10 @@
   <section class="about-principles">
     <div class="container">
       <div class="about-principles__head" data-motion-reveal="1" style="">
-        <p class="eyebrow">WHAT WE STAND BY</p>
+        <p class="eyebrow about_simzi">WHAT WE STAND BY</p>
         <h2 class="about-principles__title">How we run the store</h2>
       </div>
-      <ul class="about-principles__list">
+      <ul class="about-principles__list about_principle_ul">
         <li class="about-principle" data-motion-reveal="1" style="">
           <img class="about-principle__icon" src="assets/icons/icon-frame-tag.svg" alt="" width="64" height="64" data-motion-img="1">
           <h3 class="h5">Prices on the page</h3>
@@ -84,21 +85,19 @@
     </div>
   </section>
 
-  <section class="about-everywhere">
+  <section class="about-everywhere about_evrywhere_out">
     <div class="container">
       <div class="about-everywhere__inner">
         <img class="about-everywhere__img" src="assets/images/pages/about-everywhere.jpg" alt="Snow capped mountains above a lake under a grey sky" width="2200" height="1467" loading="lazy" decoding="async" data-motion-img="1">
         <h2 class="about-everywhere__word" data-motion-reveal="1" style="">Everywhere</h2>
         <div class="about-everywhere__card" data-motion-reveal="1" style="">
-          <p class="eyebrow eyebrow--deep">DESTINATIONS</p>
+          <p class="eyebrow eyebrow--deep about_simzi">DESTINATIONS</p>
           <p class="about-everywhere__body">Single countries, whole regions, or one global plan for the long trip. Pick the shape of the trip and the plan follows.</p>
-          <a class="btn btn--light" href="plans.html">BROWSE DESTINATIONS</a>
+          <a class="btn btn--light about_btn" href="plans.html">BROWSE DESTINATIONS</a>
         </div>
       </div>
     </div>
   </section>
 </main>
-
-   
 
 <?php include 'includes/footer.php'; ?>
