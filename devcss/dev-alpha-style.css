@@ -19,7 +19,6 @@
     letter-spacing: 1.92px;
 }
 .site-nav {
-    display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 16px;
