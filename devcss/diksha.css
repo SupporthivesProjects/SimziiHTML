@@ -32,6 +32,8 @@
   align-items: center;
   gap: 24px;
   background: var(--brand-cream, #f4f1e8);
+  width: 560px;
+  height: 427px;
 }
 
 #exampleModal .modal-dialog {
@@ -156,6 +158,7 @@
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    height: auto;
   }
 
   .log_modal_head {
