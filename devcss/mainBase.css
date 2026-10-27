@@ -93,47 +93,52 @@
       max-width: 970px;
   }
 }
-@media (min-width: 1080px){
+@media screen and (min-device-width: 1000px) and (max-device-width: 1099px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-      max-width: 1030px;
+      max-width: 940px;
   }
 }
-@media (min-width: 1100px){
+@media screen and (min-device-width: 1100px) and (max-device-width: 1199px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-      max-width: 1080px;
+      max-width: 1040px;
   }
 }
-@media (min-width: 1200px){
+@media screen and (min-device-width: 1200px) and (max-device-width: 1299px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-      max-width: 1180px;
+      max-width: 1140px;
   }
 }
-@media (min-width: 1400px){
+@media screen and (min-device-width: 1300px) and (max-device-width: 1399px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-       max-width: 1360px;
+      max-width: 1240px;
   }
 }
-@media (min-width: 1500px){
+@media screen and (min-device-width: 1400px) and (max-device-width: 1499px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+       max-width: 1340px;
+  }
+}
+@media screen and (min-device-width: 1500px) and (max-device-width: 1599px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
       max-width: 1440px;
   }
 }
-@media only screen and (min-width: 1600px) and (max-width: 1700px){
+@media screen and (min-width: 1600px) and (max-width: 1700px){
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
       max-width: 1440px;
   }
 }
-@media only screen and (min-width: 1701px) and (max-width: 1800px){
+@media screen and (min-width: 1701px) and (max-width: 1800px){
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     max-width: 1440px;
   }
 }
-@media only screen and (min-width: 1801px) and (max-width: 1920px){
+@media screen and (min-width: 1801px) and (max-width: 1920px){
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
      max-width: 1440px;
   }
 }
-@media only screen and (min-width: 1921px) and (max-width: 2880px){
+@media screen and (min-width: 1921px) and (max-width: 2880px){
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     max-width: 1440px;
   } 
