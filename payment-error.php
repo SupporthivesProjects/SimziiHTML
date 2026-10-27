@@ -1,11 +1,11 @@
-
 <?php include 'includes/header.php'; ?>
-    <main>
+  
+<main>
     <div class="result-band"></div>
     <section class="result">
         <div class="result__copy result__copy--wide">
         <img class="result__mark" src="assets/icons/mark-error.svg" alt="" width="80" height="80" data-motion-img="1">
-        <p class="eyebrow eyebrow--deep">PAYMENT ERROR</p>
+        <p class="eyebrow eyebrow--deep for_dis_color dif_sizet">PAYMENT ERROR</p>
         <h1 class="flow-title">The payment did not go through</h1>
         <p class="result__body">Your cart is saved. Check the card details on the payment page, or try a different card. If it keeps happening, your bank may have blocked the payment.</p>
         <div class="result__summary" id="result-summary">
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="result__actions">
-            <a class="btn btn--light btn--flow" href="checkout.html">TRY AGAIN</a>
+            <a class="btn btn--light btn--flow diff_colort" href="checkout.html">TRY AGAIN</a>
             <a class="result__link" href="contact.html">CONTACT SUPPORT</a>
         </div>
         </div>
