@@ -1,8 +1,19 @@
 <?php include 'includes/header.php'; ?>
+<style>
+  .eyebrow--deep {
+      color: var(--deep-gold);
+  }
+  .plan-summary__rows{
+    margin: 0px;
+  }
+  dd{
+    margin: 0px;
+  }
+</style>
  <main id="plan-page">
   <!-- country layout -->
   <!-- regional and global layout -->
-  <section class="plan-hero plan-hero--regional" data-layout="regional">
+  <section class="plan-hero plan-hero--regional rplan" data-layout="regional">
     <img class="plan-hero__photo" data-photo="" src="assets/images/pages/europe-landscape.jpg" alt="" fetchpriority="high" data-motion-img="1">
     <div class="container plan-hero__inner">
       <div class="plan-hero__copy" data-motion-reveal="1">
@@ -20,7 +31,7 @@
       <span data-count="">11 PLANS</span> FROM <span data-from-bare="" data-from="europe" data-bare="">$3.20</span>
     </p>
   </section>
-  <section class="section plan-choose" id="choose">
+  <section class="section plan-choose rplan" id="choose">
     <div class="container plan-choose__inner">
       <div class="plan-choose__head" data-motion-reveal="1" style="">
         <p class="eyebrow eyebrow--deep">CHOOSE A PLAN</p>
@@ -181,7 +192,7 @@
       </div>
     </div>
   </section>
-  <section class="section plan-areas" data-areas-section="">
+  <section class="section plan-areas rplan" data-areas-section="">
     <div class="container">
       <div class="plan-areas__label" data-motion-reveal="1" style="">
         <p class="title" data-areas-title="">EVERY AREA ON THE EUROPE PLAN</p>

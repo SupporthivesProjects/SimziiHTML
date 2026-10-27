@@ -1,0 +1,66 @@
+.desktop_none{
+    display: none !important;
+}
+.mobile_none{
+    display: block !important;
+}
+.rplan .container{
+    padding: 0px;
+}
+.rplan .plan-areas__list{
+    padding: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *************** */
+/* Responsive Css */
+/* ************* */
+@media screen and (max-width: 700px) {
+    .desktop_none{
+        display: block !important;
+    }
+    .mobile_none{
+        display: none !important;
+    }
+}
+
+@media screen and (min-device-width: 700px) and (max-device-width: 799px) {}
+
+@media screen and (min-device-width: 800px) and (max-device-width: 899px) {}
+
+@media screen and (min-device-width: 900px) and (max-device-width: 999px) {}
+
+@media screen and (min-device-width: 1000px) and (max-device-width: 1099px) {}
+
+@media screen and (min-device-width: 1100px) and (max-device-width: 1199px) {}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1299px) {}
+
+@media screen and (min-device-width: 1300px) and (max-device-width: 1399px) {}
+
+@media screen and (min-device-width: 1400px) and (max-device-width: 1499px) {}
+
+@media screen and (min-device-width: 1500px) and (max-device-width: 1599px) {}
+
+@media screen and (min-device-width: 1600px) and (max-device-width: 1699px) {}
+
+@media screen and (min-device-width: 1700px) and (max-device-width: 1799px) {}
+
+@media screen and (min-device-width: 1800px) and (max-device-width: 1899px) {}
+
+@media screen and (min-device-width: 1900px) and (max-device-width: 1999px) {}
+
+@media screen and (min-device-width: 2000px) and (max-device-width: 2400px) {}

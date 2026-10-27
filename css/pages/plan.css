@@ -177,7 +177,7 @@
 .plan-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  column-gap: 26px;
+  column-gap: 24px;
   row-gap: 24px;
 }
 .plan-option {
