@@ -1,0 +1,47 @@
+.auth-eyebrow{
+    color: var(--brand-deep-gold, #7C6224);
+margin: 0px;
+font-family: Montserrat;
+font-size: 13px;
+font-style: normal;
+font-weight: 600;
+line-height: 140%; /* 18.2px */
+letter-spacing: 2.6px;
+}
+.field__labels{
+    color: var(--brand-pine, #2F4034);
+margin: 0px;
+font-family: Montserrat;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 140%; /* 16.8px */
+letter-spacing: 1.92px;
+}
+.auth-btn--gold{
+    display: flex;
+padding: 24px 48px;
+justify-content: center;
+align-items: center;
+align-self: stretch;
+background: var(--brand-gold, #C2A15A);
+border-radius: 0px;
+color: var(--brand-forest-dark, #0C1710);
+font-family: Montserrat;
+font-size: 13px;
+font-style: normal;
+font-weight: 600;
+line-height: 140%;
+letter-spacing: 2.6px;
+transform: none;
+transition: none;
+}
+.auth-btn--gold:hover{
+    background: none;
+}
+
+
+
+@media (min-width: 761px) and (max-width:1100px){
+    
+}
