@@ -39,6 +39,10 @@
     padding: 0px;
 }
 
+.btn.btn--gold {
+    padding: 24px 48px;
+}
+
 @media (max-width: 735px) {
         .compat-hero {
             padding: 0px;
@@ -65,4 +69,8 @@
         .compat-next__inner .btn {
             padding: 24px 48px;
         }
+
+            .eyebrow {
+        font-size: 13px;
+    }
     }
