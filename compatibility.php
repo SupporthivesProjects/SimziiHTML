@@ -15,7 +15,7 @@
   </section>
 
   <section class="compat-check">
-    <div class="container">
+    <div class="container com-2">
       <div class="compat-check__head" data-motion-reveal="1" style="">
         <h2 class="compat-check__title">Check your phone<span class="text-deep-gold">.</span></h2>
         <p class="title compat-check__label">HOW TO CHECK</p>
