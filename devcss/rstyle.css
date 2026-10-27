@@ -24,9 +24,16 @@
     margin: 0px
 }
 
+.plans-regional__btn{
+    color: #C2A15A !important;
+}
 
-
-
+.plans-regional__btn:hover {
+    color: var(--forest) !important;
+}
+.rplans .container{
+    padding: 0px;
+}
 
 
 

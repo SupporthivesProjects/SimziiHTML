@@ -113,36 +113,128 @@
     return esc(name.slice(0, i)) + '<mark>' + esc(name.slice(i, i + q.length)) + '</mark>' + esc(name.slice(i + q.length));
   }
 
-  /* suggestions */
-  function renderSuggest() {
+  /* suggestions: use the suggestions already present in HTML */
+
+/* Suggestions: keep the HTML static and filter existing rows */
+function renderSuggest() {
     const q = input.value.trim();
-    if (!q) return closeSuggest();
-    const { list, areas } = results(q);
-    const areaRows = areas.map(a => ({ d: cheapestOf(a.regions), area: a, label: `COVERED BY ${andList(a.regions.map(r => r.name)).toUpperCase()}`, match: true }));
-    state.items = [...[...list.filter(o => o.match), ...areaRows].slice(0, 5), ...list.filter(o => !o.match).slice(0, 3)];
-    state.active = state.items.length ? 0 : -1;
-    const rows = state.items.map((o, i) => {
-      const n = o.area ? 0 : S.planCount(o.d);
-      const count = n ? `<span class="suggest-item__count"> · ${n} ${n === 1 ? 'plan' : 'plans'}</span>` : '';
-      return `<button class="suggest-item${i === state.active ? ' suggest-item--active' : ''}" type="button" role="option" id="sg-${i}" data-index="${i}" aria-selected="${i === state.active}">
-        <img class="flag" src="${o.area ? flagSrc({}) : flagSrc(o.d)}" alt="" width="32" height="32">
-        <span class="suggest-item__copy"><span class="suggest-item__name">${o.match ? highlight(o.area ? o.area.name : o.d.name, q) : esc(o.d.name)}</span><span class="suggest-item__meta">${esc(o.label)}${count}</span></span>
-        <span class="suggest-item__price" data-from="${o.d.id}"></span>
-        <img class="suggest-item__arrow" src="assets/icons/arrow-right.svg" alt="">
-      </button>`;
-    }).join('');
-    suggest.innerHTML = rows + `<button class="plans-suggest__all label" type="button" data-all>SEE ALL RESULTS FOR “${esc(q.toUpperCase())}”</button>`;
-    UI.fillPrices(suggest);
+
+    if (!q) {
+        closeSuggest();
+        return;
+    }
+
+    const query = q.toLowerCase();
+    const buttons = [...suggest.querySelectorAll('.suggest-item')];
+    const allButton = suggest.querySelector('[data-all]');
+
+    // Resolve the static HTML buttons to the objects used by pick().
+    const items = buttons.map(button => {
+        const destinationId = button.dataset.destination;
+        const areaName = button.dataset.area;
+
+        if (areaName) {
+            const area = findAreas(areaName)
+                .find(a => a.name.toLowerCase() === areaName.toLowerCase());
+
+            return area
+                ? { area, d: cheapestOf(area.regions), button }
+                : null;
+        }
+
+        const d = destinationId ? S.destination(destinationId) : null;
+
+        return d ? { d, button } : null;
+    });
+
+    let visibleIndex = 0;
+    const visibleItems = [];
+
+    buttons.forEach((button, i) => {
+        const item = items[i];
+
+        if (!item) {
+            button.hidden = true;
+            return;
+        }
+
+        const name = item.area ? item.area.name : item.d.name;
+
+        // Match the destination/area name, not the price or plan count.
+        const matches = name.toLowerCase().includes(query);
+
+        button.hidden = !matches;
+
+        if (matches) {
+            item.button = button;
+            item.index = visibleIndex;
+            visibleItems.push(item);
+
+            button.dataset.index = String(visibleIndex);
+            button.id = `sg-${visibleIndex}`;
+            button.classList.toggle('suggest-item--active', visibleIndex === 0);
+            button.setAttribute('aria-selected', visibleIndex === 0 ? 'true' : 'false');
+
+            // Highlight the matching name without replacing the row HTML.
+            const nameEl = button.querySelector('.suggest-item__name');
+
+            if (nameEl) {
+                const start = name.toLowerCase().indexOf(query);
+
+                if (start !== -1) {
+                    const before = name.slice(0, start);
+                    const match = name.slice(start, start + q.length);
+                    const after = name.slice(start + q.length);
+
+                    nameEl.replaceChildren(
+                        document.createTextNode(before),
+                        Object.assign(document.createElement('mark'), {
+                            textContent: match
+                        }),
+                        document.createTextNode(after)
+                    );
+                }
+            }
+
+            visibleIndex++;
+        } else {
+            button.classList.remove('suggest-item--active');
+            button.setAttribute('aria-selected', 'false');
+        }
+    });
+
+    state.items = visibleItems;
+    state.active = visibleItems.length ? 0 : -1;
+
+    if (allButton) {
+        allButton.textContent = `SEE ALL RESULTS FOR “${q.toUpperCase()}”`;
+    }
+
     suggest.hidden = false;
     input.setAttribute('aria-expanded', 'true');
-    input.setAttribute('aria-activedescendant', state.active >= 0 ? 'sg-' + state.active : '');
-  }
-  function closeSuggest() {
-    suggest.hidden = true; suggest.innerHTML = '';
-    state.items = []; state.active = -1;
+
+    if (state.active >= 0) {
+        input.setAttribute('aria-activedescendant', 'sg-0');
+    } else {
+        input.removeAttribute('aria-activedescendant');
+    }
+}
+
+function closeSuggest() {
+    suggest.hidden = true;
+    state.items = [];
+    state.active = -1;
+
     input.setAttribute('aria-expanded', 'false');
     input.removeAttribute('aria-activedescendant');
-  }
+
+    suggest.querySelectorAll('.suggest-item').forEach(button => {
+        button.hidden = false;
+        button.classList.remove('suggest-item--active');
+        button.setAttribute('aria-selected', 'false');
+    });
+}
+
   function setActive(i) {
     const rows = suggest.querySelectorAll('.suggest-item');
     if (!rows.length) return;
@@ -307,13 +399,8 @@
   document.addEventListener('store:change', e => { if (e.detail.key === 'simzii.currency') render(); });
 
   /* first paint from the URL */
-  const params = new URLSearchParams(location.search);
-  const t = (params.get('type') || '').toLowerCase();
-  if (TYPES.includes(t)) state.type = t;
-  /* runs before js/partials.js, so the header marks REGIONS current on ?type=regional */
-  if (state.type === 'regional') document.body.dataset.nav = 'regions';
   state.query = (params.get('q') || '').trim();
-  input.value = state.query;
-  placeholder();
-  render();
+input.value = state.query;
+placeholder();
+render();
 })();

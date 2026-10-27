@@ -10,8 +10,19 @@
   const all = (sel, root) => [...(root || document).querySelectorAll(sel)];
   const one = (sel, root) => (root || document).querySelector(sel);
 
-  const d = S.destination(new URLSearchParams(location.search).get('d'));
-  if (!d) { location.replace('404.html'); return; }
+  if (!S || typeof S.destination !== 'function') {
+      console.error('Store is not loaded. Check catalogue.js and store.js script order.');
+      return;
+  }
+
+  const id = new URLSearchParams(location.search).get('d');
+  const d = S.destination(id);
+
+  if (!d) {
+      console.error('Destination not found. URL parameter d =', id);
+      location.replace('404.html');
+      return;
+  }
 
   const isCountry = d.type === 'country';
   const live = S.isLive(d);
@@ -33,8 +44,16 @@
 
   /* hero */
   const hero = one(`[data-layout="${isCountry ? 'country' : 'regional'}"]`);
-  one(`[data-layout="${isCountry ? 'regional' : 'country'}"]`).remove();
-  hero.hidden = false;
+const unusedHero = one(`[data-layout="${isCountry ? 'regional' : 'country'}"]`);
+
+if (!hero) {
+    console.error('Required hero layout is missing:', isCountry ? 'country' : 'regional');
+    return;
+}
+
+if (unusedHero) unusedHero.remove();
+hero.hidden = false;
+
   one('[data-photo]', hero).src = photos.hero || d.image || d.cardImage || REGION_FALLBACK;
   all('[data-name]').forEach(el => { el.textContent = d.name; });
   all('[data-name-inline]').forEach(el => { el.textContent = d.name; });
@@ -94,7 +113,7 @@
   /* custom plan builder: countries only */
   const cp = S.customPlan();
   const custom = one('[data-custom]');
-  if (isCountry && cp) {
+  if (isCountry && cp && custom) {
     custom.hidden = false;
     const gb = one('#custom-gb'), dy = one('#custom-days');
     gb.min = cp.gbMin; gb.max = cp.gbMax; gb.value = cp.example ? cp.example.gb : cp.gbMin;

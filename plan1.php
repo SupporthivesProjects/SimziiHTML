@@ -292,4 +292,11 @@
     </div>
   </section>
 </main>
+
+
+  <script src="data/catalogue.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/partials.js"></script>
+  <script src="js/pages/plan.js"></script>
 <?php include 'includes/footer.php'; ?>
