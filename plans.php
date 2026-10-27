@@ -1,4 +1,14 @@
 <?php include 'includes/header.php'; ?>
+<style>
+  @media (max-width: 760px) {
+    .eyebrow {
+        font-size: 13px;
+    }
+    .plans-list__copy{
+      gap: 24px;
+    }
+}
+  </style>
 <main>
     <section class="page-header plans-hero rplans">
         <div class="container plans-hero__inner">
