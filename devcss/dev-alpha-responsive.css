@@ -13,13 +13,6 @@
    
 }
 @media only screen and (max-width: 600px) {
-    .site-nav {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 16px;
-        flex: 1;
-    }
     .site-header__bar .logo{
         color: var(--brand-cream-light, #F2EFE6);
         font-family: Prata;
