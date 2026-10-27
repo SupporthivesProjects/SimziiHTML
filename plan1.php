@@ -1,7 +1,29 @@
 <?php include 'includes/header.php'; ?>
+<style>
+  .plan-summary__row dd{
+    margin: 0px;
+  }
+  .btn.btn--light.custom-plan__btn{
+    height: 63px;
+  }
+  @media (max-width: 1180px) {
+    .site-nav {
+        display: none !important;
+    }
+  }
+   @media (max-width: 760px) {
+      .rplan1 .container{
+        padding-left: 24px;
+        padding-right: 24px;        
+      }
+      .rplan1 .plan-hero__inner{
+        padding-top: 32px;
+      }
+    }
+</style>
 <main id="plan-page">
   <!-- country layout -->
-  <section class="plan-hero plan-hero--country" data-layout="country">
+  <section class="plan-hero plan-hero--country rplan1" data-layout="country">
     <img class="plan-hero__photo" data-photo="" src="assets/images/pages/japan-kyoto.jpg" alt="" fetchpriority="high" data-motion-img="1">
     <div class="container plan-hero__inner">
       <div class="plan-hero__copy" data-motion-reveal="1">
@@ -21,7 +43,7 @@
     </div>
   </section>
   <!-- regional and global layout -->
-  <section class="section plan-choose" id="choose">
+  <section class="section plan-choose rplan1" id="choose">
     <div class="container plan-choose__inner">
       <div class="plan-choose__head" data-motion-reveal="1" style="">
         <p class="eyebrow eyebrow--deep">CHOOSE A PLAN</p>
@@ -224,7 +246,7 @@
       </div>
     </div>
   </section>
-  <section class="section section--dark plan-further" data-further="">
+  <section class="section section--dark plan-further rplan1" data-further="">
     <div class="container plan-further__inner">
       <div class="plan-further__collage" data-motion-reveal="1" style="">
         <img class="plan-further__img plan-further__img--large" data-further-large="" src="assets/images/pages/japan-kyoto-night.jpg" alt="" loading="lazy" decoding="async" data-motion-img="1">

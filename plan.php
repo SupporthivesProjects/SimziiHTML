@@ -9,6 +9,29 @@
   dd{
     margin: 0px;
   }
+  @media (max-width: 1180px) {
+    .site-nav {
+        display: none !important;
+    }
+  }
+  @media (max-width: 760px) {
+      .plan-hero--regional .plan-hero__copy {
+          padding-top: 32px;
+      }
+      .rplan .container{
+        padding-left: 24px;
+        padding-right: 24px;        
+      }
+      .plan-picker{
+        row-gap: 28px;
+      }
+      .eyebrow{
+        font-size: 13px;
+      }
+      .plan-option__top{
+        gap: 0px;
+      }
+  }
 </style>
  <main id="plan-page">
   <!-- country layout -->

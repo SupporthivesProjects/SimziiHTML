@@ -10,8 +10,19 @@
 .rplan .plan-areas__list{
     padding: 0px;
 }
+.rplan .btn--gold.btn--block{
+    height: 66px;
+}
 
-
+.rplan1 .container{
+    padding: 0px;
+}
+.rplan1 .btn--gold.btn--block{
+    height: 66px;
+}
+.rplan1 .plan-summary__rows{
+    margin: 0px
+}
 
 
 
