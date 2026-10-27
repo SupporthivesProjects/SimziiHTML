@@ -1,0 +1,107 @@
+.compat-check .com-2{
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.compat-check .compat-check__head {
+    margin: 0px;
+}
+
+.compat-brand__models{
+    margin: 0px;
+    padding: 0px;
+}
+
+.compat-next__inner .btn {
+    color: #C2A15A;
+}
+
+.reveal {
+    opacity: 1;
+}
+
+.faq-item { 
+    padding: 24px 0px;
+}
+
+.faq-item.faq-item--open {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item__question {
+    padding: 0px;
+}
+
+.faq-item__answer p {
+    padding: 0px;
+}
+
+.btn.btn--gold {
+    padding: 24px 48px;
+}
+
+.contact__grid{
+    padding: 0px;
+}
+
+.contact__copy {
+    padding: 0px;
+}
+
+.contact-detail dd {
+    margin: 0px;
+}
+
+.btn.btn--light.contact-form__submit{
+    color: #7C6224;
+    padding: 24px 48px;
+}
+
+.btn.btn--light{
+   color: #7C6224; 
+}
+
+@media (max-width: 735px) {
+        .compat-hero {
+            padding: 0px;
+        }
+
+        .compat-check .com-2{
+            gap: 24px;
+        }
+
+        .compat-devices__note{
+            gap: 32px;
+        }
+
+        .compat-devices__note .btn {
+            padding: 24px 48px;
+            font-size: 13px;
+            color: #7C6224;
+        }
+
+        .compat-next__inner .eyebrow {
+            font-size: 13px;
+        }
+
+        .compat-next__inner .btn {
+            padding: 24px 48px;
+        }
+
+            .eyebrow {
+        font-size: 13px;
+        }
+
+        .contact__copy {
+        padding: 0px 24px 48px 24px;
+        }
+
+        .contact-form{
+            padding: 0px 24px;
+        }
+
+
+    }
