@@ -11,15 +11,15 @@
 
   <form class="auth__card" data-auth="forgot" novalidate="">
     <div class="auth__head">
-      <p class="eyebrow eyebrow--deep">ACCOUNT</p>
-      <h1 class="h3 auth__title">Reset your password</h1>
+      <p class="auth-eyebrow">ACCOUNT</p>
+      <h1 class="auth__title">Reset your password</h1>
       <p class="auth__lead">Enter the email on your account and we will send you a link to set a new password.</p>
     </div>
     <div class="field">
-      <label class="field__label" for="email">EMAIL</label>
+      <label class="field__labels" for="email">EMAIL</label>
       <input class="field__control" id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" data-rule="email" data-error="Enter a full email address, like name@example.com.">
     </div>
-    <button class="btn btn--gold btn--block" type="submit">SEND RESET LINK</button>
+    <button class="btn auth-btn--gold" type="submit">SEND RESET LINK</button>
     <div class="auth__switch">
       <p>Remembered it?</p>
       <a class="auth__link" href="login.html">BACK TO LOG IN</a>

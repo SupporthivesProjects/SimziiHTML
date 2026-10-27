@@ -8,19 +8,19 @@
   </div>
   <form class="auth__card" data-auth="reset" novalidate="">
     <div class="auth__head">
-      <p class="eyebrow eyebrow--deep">ACCOUNT</p>
-      <h1 class="h3 auth__title">Set a new password</h1>
+      <p class="auth-eyebrow">ACCOUNT</p>
+      <h1 class="auth__title">Set a new password</h1>
       <p class="auth__lead">Use at least 8 characters.</p>
     </div>
     <div class="field">
-      <label class="field__label" for="new-password">NEW PASSWORD</label>
+      <label class="field__labels" for="new-password">NEW PASSWORD</label>
       <input class="field__control" id="new-password" name="password" type="password" autocomplete="new-password" placeholder="••••••••••••" data-rule="min8" data-error="Use at least 8 characters.">
     </div>
     <div class="field">
-      <label class="field__label" for="confirm-password">CONFIRM NEW PASSWORD</label>
+      <label class="field__labels" for="confirm-password">CONFIRM NEW PASSWORD</label>
       <input class="field__control" id="confirm-password" name="confirm" type="password" autocomplete="new-password" placeholder="••••••••••••" data-rule="match:new-password" data-error="The passwords do not match.">
     </div>
-    <button class="btn btn--gold btn--block" type="submit">SAVE NEW PASSWORD</button>
+    <button class="btn auth-btn--gold" type="submit">SAVE NEW PASSWORD</button>
   </form>
 </main>
 <?php include 'includes/footer.php'; ?>
