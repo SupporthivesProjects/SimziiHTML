@@ -73,6 +73,9 @@
         background: #2E3A2F;
         opacity: 1;
     }
+    .site-footer .container{
+        padding: 0px 24px;
+    }
 
 
 }
