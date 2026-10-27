@@ -43,6 +43,27 @@
     padding: 24px 48px;
 }
 
+.contact__grid{
+    padding: 0px;
+}
+
+.contact__copy {
+    padding: 0px;
+}
+
+.contact-detail dd {
+    margin: 0px;
+}
+
+.btn.btn--light.contact-form__submit{
+    color: #7C6224;
+    padding: 24px 48px;
+}
+
+.btn.btn--light{
+   color: #7C6224; 
+}
+
 @media (max-width: 735px) {
         .compat-hero {
             padding: 0px;
@@ -72,5 +93,15 @@
 
             .eyebrow {
         font-size: 13px;
-    }
+        }
+
+        .contact__copy {
+        padding: 0px 24px 48px 24px;
+        }
+
+        .contact-form{
+            padding: 0px 24px;
+        }
+
+
     }
