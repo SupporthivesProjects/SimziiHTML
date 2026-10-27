@@ -4,7 +4,7 @@
 <section class="legal-title">
   <div class="container legal-title__inner">
     <div class="legal-title__copy">
-      <p class="eyebrow">LEGAL</p>
+      <p class="eyebrow legal-eye">LEGAL</p>
       <h1 class="legal-title__h1">Terms &amp; Conditions</h1>
     </div>
     <p class="legal-title__updated label">LAST UPDATED 2 OCTOBER 2026</p>
@@ -101,7 +101,7 @@
         <h2 class="legal-clause__head">
           <span class="legal-clause__numeral">06</span> Refunds
         </h2>
-        <p>All eSIM sales are final. We do not refund for a phone that is incompatible or carrier locked, for the wrong plan or for a change of mind. We give a refund if your eSIM was not delivered because of a system error, or if its QR code is invalid and cannot be installed. Send the request within 14 days of purchase. Top ups are not refundable once added to an eSIM. The <a class="link" href="legal.html?doc=refunds">Refunds page</a> explains how to ask for one. </p>
+        <p>All eSIM sales are final. We do not refund for a phone that is incompatible or carrier locked, for the wrong plan or for a change of mind. We give a refund if your eSIM was not delivered because of a system error, or if its QR code is invalid and cannot be installed. Send the request within 14 days of purchase. Top ups are not refundable once added to an eSIM. </p>
       </section>
       <section class="legal-clause" id="changes" data-clause="changes">
         <h2 class="legal-clause__head">
@@ -113,7 +113,7 @@
         <h2 class="legal-clause__head">
           <span class="legal-clause__numeral">08</span> Contact
         </h2>
-        <p>Questions about these terms can be sent to <a class="link" href="mailto:info@simzii.com">info@simzii.com</a>. </p>
+        <p>Questions about these terms can be sent to <a class="link" href="mailto:info@simzii.com" style="text-decoration:none;color:#2F4034;">info@simzii.com</a>. </p>
       </section>
     </article>
   </div>

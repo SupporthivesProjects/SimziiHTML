@@ -7,7 +7,7 @@
     <p class="not-found__body" data-motion-reveal="1">This page is not on the map. Head back home, or pick a destination and get moving again.</p>
     <div class="not-found__actions" data-motion-reveal="1">
       <a class="btn btn--gold" href="index.html">BACK TO HOME</a>
-      <a class="btn" href="plans.html">BROWSE DESTINATIONS</a>
+      <a class="btn error-btn" href="plans.html">BROWSE DESTINATIONS</a>
     </div>
   </div>
   <p class="not-found__rail not-found__rail--left label" aria-hidden="true">NO SERVICE</p>
