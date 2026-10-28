@@ -338,6 +338,9 @@
     .index_fig {
         font-size: 20px;
     }
+    .index_h_wash {
+        background: none;
+    }
 }
 
 @media only screen and (min-width: 780px) and (max-width:991px) {}
